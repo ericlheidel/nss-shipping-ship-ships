@@ -3,15 +3,17 @@ import { getHaulers, getShips } from "./database.js";
 const haulers = getHaulers()
 const ships = getShips()
 
-haulers.sort(function (a, b) {
-    if (a.name < b.name) {
-        return -1
-    }
-    if (a.name > b.name) {
-        return 1
-    }
-    return 0
-})
+// haulers.sort(function (a, b) {
+//     if (a.name < b.name) {
+//         return -1
+//     }
+//     if (a.name > b.name) {
+//         return 1
+//     }
+//     return 0
+// })
+
+haulers.sort((a, b) => a.name.localeCompare(b.name))
 
 document.addEventListener(
     "click",

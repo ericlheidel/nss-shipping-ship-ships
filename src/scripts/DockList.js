@@ -3,15 +3,17 @@ import { getDocks, getHaulers } from "./database.js";
 const docks = getDocks()
 const haulers = getHaulers()
 
-docks.sort(function (a, b) {
-    if (a.location < b.location) {
-        return -1
-    }
-    if (a.location > b.location) {
-        return 1
-    }
-    return 0
-})
+// docks.sort(function (a, b) {
+//     if (a.location < b.location) {
+//         return -1
+//     }
+//     if (a.location > b.location) {
+//         return 1
+//     }
+//     return 0
+// })
+
+docks.sort((a, b) => a.location.localeCompare(b.location))
 
 
 
