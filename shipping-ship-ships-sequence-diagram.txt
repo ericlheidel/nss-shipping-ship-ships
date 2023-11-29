@@ -1,0 +1,20 @@
+title Shipping Ship Ships
+
+participant main.js
+
+participant database.js
+
+participant index.html
+-----
+-----
+main.js->database.js:Call for all dock objects information
+
+database.js-->main.js:return docks objects information
+-----
+-----
+loop 
+main.js->main.js:iterate through\ndock objects
+end
+-----
+-----
+main.js->index.html:push strings with dock interpolated dock information
